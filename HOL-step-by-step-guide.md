@@ -2,6 +2,7 @@
 - [名前付け規則を定義する](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
 - [Azure リソースの種類に推奨される省略形](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations)
 
+<br />
 
 ### Contents
 
@@ -13,7 +14,7 @@
 
 - [Exercise 4: 仮想マシンのバックアップ](#exercise-4-仮想マシンのバックアップ)
 
-- [Exercise 5: 仮想マシンのリストア](#exercise-5-仮想マシンのリストア)
+- [Exercise 4: 仮想マシンのリストア](#exercise-4-仮想マシンのリストア)
 
 ## Exercise 1: リソースグループ、仮想ネットワーク作成
 
