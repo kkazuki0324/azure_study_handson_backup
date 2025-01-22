@@ -134,11 +134,11 @@
 
       - **パブリック受信ポート**: なし
 
-      <img src="images/create-vm-02.png" />
+      <img src="images/ex01-0008.png"/>
 
 <br />
 
-  - **ディスク**
+  - **ディスク** 
 
     - **OS ディスク**
 
@@ -146,7 +146,7 @@
 
       - **VM と共に削除**: オン
 
-      <img src="images/create-vm-03.png" />
+      <img src="images/ex01-0009.png" />
 
 <br />
 
@@ -168,7 +168,7 @@
 
       - **負荷分散のオプション**: なし
 
-      <img src="images/create-vm-04.png" />
+      <img src="images/ex01-0010.png" />
 
 <br />
 
@@ -176,7 +176,7 @@
 
     既定の設定のまま
 
-    <img src="images/create-vm-05.png" />
+    <img src="images/ex01-0011.png" />
 
 <br />
 
@@ -184,7 +184,7 @@
 
     既定の設定のまま
 
-    <img src="images/create-vm-06.png" />
+    <img src="images/ex01-0012.png" />
 
 <br />
 
@@ -192,35 +192,35 @@
 
     既定の設定のまま
 
-    <img src="images/create-vm-07.png" />
+    <img src="images/ex01-0013.png" />
 
 - **確認および作成** をクリック、指定した内容を確認し **作成** をクリック
 
-  <img src="images/create-vm-08.png" />
+  <img src="images/ex01-0014.png" />
 
 <br />
 
 ### Task 2: 静的 IP アドレスの割り当て
 
-- 作成した仮想マシンの管理ブレードへ移動し、**ネットワーク** を選択
+- 作成した仮想マシンの管理ブレードへ移動し、**ネットワーク/ネットワーク設定** を選択
 
 - ネットワーク インターフェイスをクリック
 
-  <img src="images/vm-network-01.png" />
-
+  <img src="images/ex01-0015.png" />
+  
 - **IP 構成** を選択し **ipconfig1** をクリック
 
-  <img src="images/vm-network-02.png" />
+  <img src="images/ex01-0016.png" />
 
 - **IP 構成の編集** の **プライベート IP アドレスの設定** ‐ **割り当て** で **静的** を選択
 
   任意のプライベート IP アドレスを指定（現在割り当て中のものでも OK）
 
-  <img src="images/vm-network-03.png" />
+  <img src="images/ex01-0017.png" />
 
 - **保存** をクリックし、プライベート IP アドレスの割り当てが静的に変更されたことを確認
 
-  <img src="images/vm-network-04.png" />
+  <img src="images/ex01-0018.png" />
 
 <br />
 
@@ -228,11 +228,11 @@
 
 - 仮想マシンの管理ブレードで **ディスク** を選択、**＋ 新しいディスクを作成し接続する** をクリック
 
-  <img src="images/vm-disk-01.png" />
+  <img src="images/ex01-0019.png" />
 
 - ディスク名を入力し、種類とサイズを指定
 
-  <img src="images/vm-disk-02.png" />
+  <img src="images/ex01-0020.png" />
 
   ※ 新しいディスクの初期化は、後の手順で仮想マシンに接続して設定
 
@@ -244,7 +244,7 @@
 
 - 利用可能なサイズの一覧から新しいサイズを選択し **サイズの変更** をクリック
 
-  <img src="images/vm-change-size.png" />
+  <img src="images/ex01-0021.png" />
 
   ※ 仮想マシンが実行中の場合、サイズを変更した際は再起動を実施
 
