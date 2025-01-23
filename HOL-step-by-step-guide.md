@@ -315,7 +315,7 @@
 
 - コンテナーの種類で **Recovery Services vault** を選択し、**続行** をクリック
 
-  <img src="images/recovery-services-vault-03.png" />
+  <img src="images/ex03-0003.png" />
 
 - Recovery Services コンテナーの作成
 
@@ -333,15 +333,32 @@
 
       - **リージョン**: 仮想マシンを展開したリージョン1
 
-        <img src="images/recovery-services-vault-04.png" />
+        <img src="images/ex03-0004.png" />
 
         <br />
+
+  - **冗長**
+
+    - **リージョンをまたがる復元**： オン
+
+      <img src="images/ex03-0005.png">
+
+    <br />
+  
+  - **暗号化**
+
+    - 既定の設定のまま
+
+      <img src="images/ex03-0006.png">
+
+    <br />
+
 
   - **コンテナーのプロパティ**
 
     - **不変性を有効にする**: オン
 
-      <img src="images/recovery-services-vault-05.png" />
+      <img src="images/ex03-0007.png" />
 
       <br />
 
@@ -349,45 +366,33 @@
 
     - **接続方法**: すべてのネットワークからのパブリック アクセスを許可する
 
-      <img src="images/recovery-services-vault-06.png" />
+      <img src="images/ex03-0008.png" />
 
       <br />
 
 - **確認および作成** をクリック、指定した内容を確認し **作成** をクリック
 
-  <img src="images/recovery-services-vault-07.png" />
+  <img src="images/ex03-0009.png" />
 
   <br />
 
-- 展開完了後、作成した Recovery Services コンテナーの管理ブレードへ移動
+### Task 2: ビジネス継続性センターの作成
 
-- **プロパティ** を選択、**バックアップ構成** の **更新** をクリック
+- ビジネス継続性センターへ移動、**＋ ポリシー** をクリック
 
-  <img src="images/recovery-services-vault-08.png" />
-
-- リージョンをまたがる復元で **有効にする** を選択し **保存** をクリック
-
-  <img src="images/recovery-services-vault-09.png" />
-
-<br />
-
-### Task 2: バックアップ ポリシーの作成
-
-- バックアップ センターへ移動、**＋ ポリシー** をクリック
-
-  <img src="images/backup-center-summary.png" />
+  <img src="images/ex03-0010.png" />
 
 - **データソースの種類** で **Azure 仮想マシン** を選択し、**コンテナーの選択** をクリック
 
-  <img src="images/backup-policy-01.png" />
+  <img src="images/ex03-0011.png" />
 
 - 作成した Recovery Services コンテナーを選択し **選択** をクリック
 
-  <img src="images/backup-policy-02.png" />
+  <img src="images/ex03-0012.png" />
 
 - **続行** をクリック
 
-  <img src="images/backup-policy-03.png" />
+  <img src="images/ex03-0013.png" />
 
 - ポリシーの作成
 
@@ -417,7 +422,7 @@
 
     - **毎月のバックアップ ポイントの保有期間**: オン（週ベース、最終日曜日、6 月）
 
-      <img src="images/backup-policy-04.png" />
+      <img src="images/ex03-0014.png" />
 
       <br />
 
@@ -427,23 +432,21 @@
 
 ### Task 3: バックアップの構成
 
-- バックアップ センターへ移動、**＋ バックアップ** をクリック
+- ビジネス継続性センターへ移動、**＋ バックアップ** をクリック
 
-  <img src="images/backup-center-summary.png" />
+  <img src="images/ex03-0015.png" />
 
-- バックアップ対象、Recovery Services コンテナーを選択し **続行** をクリック
+- ワークロード、バックアップ対象を選択し **バックアップ** をクリック
 
-  - **データソースの種類**: Azure 仮想マシン
+  - **ワークロード**: Azure
   
-  - **コンテナーの種類**: Recovery Services vault
+  - **データソースの種類**: Azure 仮想マシン
 
-  - **コンテナー**: 作成した Recovery Services コンテナーを選択
-
-    <img src="images/backup-configuration-01.png" />
+    <img src="images/ex03-0016.png" />
 
     <br />
 
-- バックアップの構成
+- バックアップの構成で、**バックアップの有効化** をクリック
 
   - **ポリシーのサブタイプ**: Standard
 
@@ -451,15 +454,15 @@
 
   - **仮想マシン**: 追加をクリックし、展開済みの仮想マシンを選択
 
-    <img src="images/backup-configuration-02.png" />
+    <img src="images/ex03-0017.png" />
 
     <br />
 
-- 仮想マシンの管理ブレードから、**バックアップ** を開き、**バックアップの有効化** をクリック（バックアップの保持期限はデフォルトの値のままでOK）
+- 仮想マシンの管理ブレードから、**バックアップ** を開き、**今すぐバックアップ** をクリック（バックアップの保持期限はデフォルトの値のままでOK）
 
   ※ バックアップが有効化されている仮想マシンではオンデマンドでバックアップも可
 
-    <img src="images/backup-recovery-01.png" />
+    <img src="images/ex03-0018.png" />
 
 <br />
 
@@ -471,4 +474,55 @@
 
 ## Exercise 4: 仮想マシンのリストア
 
-- k
+### Task 1: ストレージアカウントの作成
+
+- Azureポータルで **ストレージアカウント** と検索し、**作成** をクリック
+
+  <img src="images/ex03-0019.png" />
+
+- ストレージアカウントの作成
+
+  - 基本情報
+
+    - サブスクリプション：（ハンズオン用に用意されるもの）
+
+    - リソースグループ：（作成したリソースグループ）
+
+    - ストレージアカウント名：一意の名前
+
+    ※その他デフォルトのまま
+
+      <img src="images/ex03-0020.png" />
+  
+  <br />
+
+
+### Task 2: バックアップの復元
+
+- 仮想マシンの管理ブレードから、 **バックアップ** を開き、 **VMの復元** をクリック
+
+  <img src="images/ex03-0021.png" />
+
+  - 復元ポイントの選択先：先ほど取得した復元ポイントを選択して、**OK** をクリックし、**復元**をクリック
+
+    - 復元の種類：**新しい仮想マシンの作成** を選択
+
+    - 仮想マシン名：（任意名）
+
+    - サブスクリプション：（ハンズオン用に用意されるもの）
+
+    - リソースグループ：（作成したリソースグループ）
+
+    - 仮想ネットワーク：（作成した仮想ネットワーク）
+
+    - サブネット：（作成したサブネット）
+
+    - ステージングの場所：（作成したストレージアカウント）
+
+      <img src="images/ex03-0022.png" />
+  
+  <br />
+
+
+
+### Task 2: バックアップの変更履歴の確認
