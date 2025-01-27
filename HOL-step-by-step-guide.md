@@ -14,11 +14,11 @@
 
 - [Exercise 4: 仮想マシンのバックアップ](#exercise-4-仮想マシンのバックアップ)
 
-- [Exercise 4: 仮想マシンのリストア](#exercise-4-仮想マシンのリストア)
+- [Exercise 5: 仮想マシンのリストア](#exercise-4-仮想マシンのリストア)
 
 ## Exercise 1: リソースグループ、仮想ネットワーク作成
 
-<img src="images/mcw-exercise-2.png" />
+<img src="images/main-exercise-1.png" />
 
 ### Task 1: リソースグループ作成
 
@@ -88,7 +88,7 @@
 
 ## Exercise 2: 仮想マシンの展開と構成
 
-<img src="images/mcw-exercise-2.png" />
+<img src="images/main-exercise-2.png" />
 
 ### Task 1: 仮想マシンの展開
 
@@ -250,7 +250,9 @@
 
 <br />
 
-## Exercise 2: Bastion を使用した仮想マシンへの接続
+## Exercise 3: Bastion を使用した仮想マシンへの接続
+
+  <img src="images/main-exercise-3.png" />
 
 ### Task 1:Bastion 作成
 - Azure ポータルで最初に作成した仮想マシンの画面を開く
@@ -299,9 +301,9 @@
 <br />
 
 
-## Exercise 3: 仮想マシンのバックアップ
+## Exercise 4: 仮想マシンのバックアップ
 
-<img src="images/.png" />
+<img src="images/main-exercise-4.png" />
 
 ### Task 1: Recovery Services コンテナの作成と構成
 
@@ -472,7 +474,9 @@
 
 <br />
 
-## Exercise 4: 仮想マシンのリストア
+## Exercise 5: 仮想マシンのリストア
+
+  <img src="images/main-exercise-4.png" />
 
 ### Task 1: ストレージアカウントの作成
 
