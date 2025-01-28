@@ -16,9 +16,11 @@
 
 - [Exercise 5: 仮想マシンのリストア](#exercise-4-仮想マシンのリストア)
 
+<br />
+
 ## Exercise 1: リソースグループ、仮想ネットワーク作成、ストレージアカウントの作成
 
-<img src="images/main-exercise-1.png" />![alt text](image.png)
+<img src="images/main-exercise-1.png" />
 
 ### Task 1: リソースグループ作成
 
@@ -44,6 +46,8 @@
     - 確認及び作成
 
       内容を確認して作成
+
+<br />
 
 
 ### Task 2: 仮想ネットワーク作成

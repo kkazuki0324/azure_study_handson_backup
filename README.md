@@ -1,4 +1,4 @@
-# azure_study_handson_backup
+# Azure_Study_HandsOn_Backup
 
 ## 目的
 
@@ -8,7 +8,7 @@
 
 本ハンズオンを通して、仮想ネットワーク、仮想マシンの使用方法について学習します。
 
-![完成状態](/docs/images/ex00-0000-completed.png)
+![完成状態](/images/main-exercise-4.png)
 
 ## 対象
 
