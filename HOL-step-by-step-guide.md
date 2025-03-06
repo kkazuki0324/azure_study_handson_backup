@@ -556,4 +556,278 @@
 
 ## （Option） 仮想マシンのバックアップ
 
-  
+<img src="images/mcw-exercise-7.png" />
+
+### Task 1: MARS エージェントのインストールとサーバーの登録
+
+- 仮想マシンへ Bastion を使用して接続し、Azure ポータルへアクセス
+
+- Recovery Services コンテナーの管理ブレードへ移動し、**プロパティ** を選択
+
+- **Recovery Services Agent** の **ダウンロード** をクリックし、任意の場所へ保存
+
+- **Backup の資格情報** ‐ **最新の Recovery Services Agent を既に使用している** にチェック、
+
+  **ダウンロード** をクリックし、資格情報ファイルを任意の場所へ保存
+
+  <img src="images/recovery-services-vault-10.png" />
+
+  <br />
+
+- ダウンロードした MARS エージェントのインストーラーを起動
+
+- **Installation Settins** でインストール先、キャッシュ場所 (送信前データの格納先) を指定し **Next** をクリック
+
+  <img src="images/install-mars-agent-01.png" />
+
+  <br />
+
+- **Proxy Configuration** は設定を行わないので、**Next**： をクリック
+
+  <img src="images/install-mars-agent-02.png" />
+
+  <br />
+
+- **Microsoft Update Opt-In** は **Use Microsoft Update when I check for updates** を選択し **Next** をクリック
+
+  <img src="images/install-mars-agent-03.png" />
+
+  <br />
+
+- **Install** をクリックし、MARS エージェントのインストールを実行
+
+  <img src="images/install-mars-agent-04.png" />
+
+  <br />
+
+- インストール完了後、**Proceed to Registration** をクリック
+
+  <img src="images/install-mars-agent-05.png" />
+
+  <br />
+
+- サーバー登録ウィザードが起動
+
+  ダウンロードした資格情報ファイルを指定し **Next** をクリック
+
+  <img src="images/register-server-01.png" />
+
+  <br />
+
+- **Encryption Setting** で **Generate Passphrase** をクリックし、パスフレーズを生成
+
+  生成したパスフレーズ ファイルを指定する任意の場所を指定
+
+  <img src="images/register-server-02.png" />
+
+  <br />
+
+  ※ パスフレーズ ファイルの保存先にローカルを指定した際は警告が表示
+
+  ※ 次の手順に進む場合は Yes をクリック
+
+  <img src="images/register-server-03.png" />
+
+- サーバーの登録が正常に完了することを確認
+
+  **Launch Microsoft Agent Recovery Services Agent** にチェックを付け **Close** をクリック
+
+  <img src="images/register-server-04.png" />
+
+<br />
+
+### Task 2: バックアップ ポリシーの作成
+
+- エージェント コンソールを起動
+
+  スタート メニューで Microsoft Azure Backup を検索、またはデスクトップ上のショートカットをダブルクリック
+
+- **Action** メニューから **Schedule Backup** を選択
+
+- バックアップのスケジュール ウィザードが起動、**Next** をクリック
+
+  <img src="images/schedule-backup-01.png" />
+
+  <br />
+
+- バックアップする項目の選択で **Add Items** をクリック
+
+  <img src="images/schedule-backup-02.png" />
+
+  <br />
+
+- **項目の選択** ボックスで、バックアップする項目を選択し **OK** をクリック
+
+  <img src="images/schedule-backup-03.png" />
+
+  ※ Bastion から仮想マシンに接続時に C ドライブ直下に作成したフォルダと追加したドライブを選択
+
+- 選択したフォルダ、ドライブが追加されていることを確認し **Next** をクリック
+
+  <img src="images/schedule-backup-04.png" />
+
+  <br />
+
+- **バックアップのスケジュール選択** で、バックアップの実行時間を指定
+
+  - **Schedule a backup every**: Day
+
+  - **At following times**: 11:30 PM
+
+    <img src="images/schedule-backup-05.png" />
+
+    <br />
+
+- **保持ポリシーの選択** で、保存する復旧ポイントと保持期間を設定
+
+  - **Daily Retention Policy**: 既定で選択（変更不可）、7 日
+
+  - **Weekly Retention Policy**: オン（Saturday, 11:30 PM, 2 Weeks）
+
+    <img src="images/schedule-backup-06.png" />
+
+    <br />
+
+- **初期バックアップの種類の選択** で **Online** を選択し **Next** をクリック
+
+  <img src="images/schedule-backup-07.png" />
+
+  <br />
+
+- 指定した内容を確認し **Finish** をクリック
+
+  <img src="images/schedule-backup-08.png" />
+
+  <br />
+
+- バックアップ スケジュールの作成の完了を待ち **Close** をクリック
+
+  <img src="images/schedule-backup-09.png" />
+
+<br />
+
+### Task 3: オンデマンド バックアップの実行
+
+- エージェント コンソールを起動
+
+- **Action** メニューから **Back Up Now** を選択
+
+- **バックアップ アイテムの選択** で **Files and Folders** を選択し **Next** をクリック
+
+  <img src="images/backup-now-01.png" />
+
+  <br />
+
+- **バックアップの保持期間** でカレンダーから日付を選択し **Next** をクリック
+
+  <img src="images/backup-now-02.png" />
+
+  <br />
+
+- バックアップ ポリシー作成時に選択した項目が表示されることを確認し **Backup** をクリック
+
+  <img src="images/schedule-backup-03.png" />
+
+  <br />
+
+- バックアップ ジョブが開始
+
+  <img src="images/backup-now-04.png" />
+
+  <br />
+
+- **Close** をクリックし、ウィザードを終了（バックアップ ジョブはバックグラウンドで実行を継続）
+
+<br />
+
+### Task 4: ファイルの復元
+
+- バックアップを取得したファイルの内容を変更、または削除
+
+  <img src="images/file-recovery-01.png" />
+
+  <br />
+
+- エージェント コンソールを起動
+
+- **Action** メニューから **Recover Data** を選択
+
+- **Getting Started** で **This server** を選択し **Next** をクリック
+
+  <img src="images/file-recovery-02.png" />
+
+  <br />
+
+- **回復モードの選択** で **Indivisual files and folders** を選択
+
+  <img src="images/file-recovery-03.png" />
+
+  <br />
+
+- **ボリュームと日付の選択** で復元するファイルを含むボリュームを選択
+
+  カレンダーから太字で表示される日付を選択、 **Time** から特定の復旧ポイントを選択し、**Mount** をクリック
+
+  <img src="images/file-recovery-04.png" />
+
+  <br />
+
+- **ファイルの参照と回復** で **Browse** をクリック
+
+  <img src="images/file-recovery-05.png" />
+
+  <br />
+
+- エクスプローラーが起動、復元するファイルをコピーし、元の場所へ貼り付け
+
+  <img src="images/file-recovery-06.png" />
+
+  ※ 更新（削除）前の状態にファイルが復元されたことを確認
+
+  <br />
+
+- **Unmount** をクリック、メッセージが表示されるので **Yes** を選択し、ボリュームをマウント解除
+
+  <img src="images/file-recovery-07.png" />
+
+  ※ 回復ボリュームは 6 時間マウント、ファイル コピーが継続中は最大 7 日間までマウント時間を延長
+
+<br />
+
+## Exercise 8: 変更履歴の確認
+
+<img src="images/mcw-exercise-8.png" />
+
+### Task 1: クエリの実行
+
+- 検索バーに **resource graph** と入力し、表示される候補の **Resource Graph エクスプローラー** を選択
+
+  <img src="images/change-history-01.png" />
+
+  <br />
+
+- クエリを記述し、実行
+
+  ```
+  resourcechanges
+  | extend changeTime = todatetime(properties.changeAttributes.timestamp),
+    targetResourceId = tostring(properties.targetResourceId), 
+    changeType = tostring(properties.changeType), 
+    correlationId = properties.changeAttributes.correlationId,
+    previousValue = tostring(properties.changes["properties.hardwareProfile.vmSize"]["previousValue"]),
+    newValue = tostring(properties.changes["properties.hardwareProfile.vmSize"]["newValue"]),
+    changedProperties = properties.changes,
+    changeCount = properties.changeAttributes.changesCount
+  | where changeTime > ago(1d) and changeType == "Update" and changedProperties contains "hardwareProfile.vmSize"
+  | order by changeTime desc
+  | project changeTime, targetResourceId, changeType, correlationId, changeCount, previousValue, newValue, changedProperties 
+  ```
+
+  <br />
+
+- リソースの変更履歴が管理されており、変更前・後の値が取得できることを確認
+
+  <img src="images/change-history-02.png" />
+
+<br />
+
